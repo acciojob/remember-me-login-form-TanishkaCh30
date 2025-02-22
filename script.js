@@ -1,5 +1,5 @@
 
-let submitBtn =  document.getElementById("submit");
+let submitBtn =  document.querySelector("input#submit");
 let existBtn =  document.getElementById("existing");
 let checkBox = document.getElementById("checkbox");
 let username = document.getElementById("username");
