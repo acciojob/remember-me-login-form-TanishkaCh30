@@ -9,7 +9,6 @@ submitBtn.addEventListener("click" ,(e)=>{
 	e.preventDefault();
 	if(username.value!=="" && password.value!=="" && !checkBox.checked){
 		 localStorage.removeItem('credentials');
-		alert("credentials are not stored");
 		return;
 	}
 	else if(username.value!=="" && password.value!=="" && checkBox.checked){
