@@ -8,26 +8,28 @@ let password = document.getElementById("password");
 submitBtn.addEventListener("click" ,(e)=>{
 	e.preventDefault();
 	if(username.value!=="" && password.value!=="" && !checkBox.checked){
-		localStorage.clear();
+		 localStorage.removeItem('credentials');
 		alert("credentials are not stored");
+		return;
 	}
 	else if(username.value!=="" && password.value!=="" && checkBox.checked){
-// 		let formData = {
-// 	'username':username.value,
-// 	'password':password.value
-// }
+		let credentials = {
+	username:username.value,
+	password:password.value
+}
 
-		localStorage.setItem('username',username.value);
-		localStorage.setItem('password',password.value);
+		localStorage.setItem('credentials', JSON.stringify(credentials));
 		// location.reload();
 		existBtn.style.display = 'block';
 	}
 })
 
 existBtn.addEventListener("click" ,()=>{
-	let data = localStorage.getItem('username');
-	if(data){
-	alert(`Logged in as ${data}`);
+	let data = localStorage.getItem('credentials');
+  if (data) {
+    let parsedData = JSON.parse(data);
+    alert(`Logged in as ${parsedData.username}`);
+
 	}
 })
 
