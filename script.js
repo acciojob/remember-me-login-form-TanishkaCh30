@@ -5,6 +5,12 @@ let checkBox = document.getElementById("checkbox");
 let username = document.getElementById("username");
 let password = document.getElementById("password");
 
+window.onload = function() {
+    let data = localStorage.getItem('formData');
+    if (data) {
+        existBtn.style.display = 'block'; // Show the existing user button
+    }
+};
 
 
 submitBtn.addEventListener("click" ,(e)=>{
