@@ -1,4 +1,4 @@
-let form = document.getElementById("form");
+
 let submitBtn =  document.getElementById("submit");
 let existBtn =  document.getElementById("existing");
 let checkBox = document.getElementById("checkbox");
