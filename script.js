@@ -1,4 +1,3 @@
-
 let submitBtn =  document.querySelector("input#submit");
 let existBtn =  document.getElementById("existing");
 let checkBox = document.getElementById("checkbox");
@@ -13,22 +12,22 @@ submitBtn.addEventListener("click" ,(e)=>{
 		alert("credentials are not stored");
 	}
 	else if(username.value!=="" && password.value!=="" && checkBox.checked){
-		let formData = {
-	'username':username.value,
-	'password':password.value
-}
+// 		let formData = {
+// 	'username':username.value,
+// 	'password':password.value
+// }
 
-		localStorage.setItem('formData',JSON.stringify(formData));
+		localStorage.setItem('username',username.value);
+		localStorage.setItem('password',password.value);
 		// location.reload();
 		existBtn.style.display = 'block';
 	}
 })
 
 existBtn.addEventListener("click" ,()=>{
-	let data = localStorage.getItem('formData');
+	let data = localStorage.getItem('username');
 	if(data){
-	let parsedData = JSON.parse(data);
-	alert(`Logged in as ${parsedData.username}`);
+	alert(`Logged in as ${data}`);
 	}
 })
 
